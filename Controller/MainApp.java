@@ -1,12 +1,15 @@
 package Controller;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Model.CardPayment;
+import Model.FilesManager;
 import View.PaymentProcessor;
 
 public class MainApp {
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Número de tarjeta: ");

@@ -2,17 +2,22 @@ package Model;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
+
 public class FilesManager {
 
 
-    public static void writeFilesCSV(String path, ArrayList<String> newT) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+    public static void writeFilesCSV(int N, ArrayList<String> newT) {
+        String path = "example"+N+".csv";    
+        try (FileWriter writer = new FileWriter(path)){
             for (String word : newT) {
                 writer.write(word);
                 writer.write(",");

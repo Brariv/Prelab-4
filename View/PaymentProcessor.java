@@ -1,3 +1,7 @@
+package View;
+
+import Model.CardPayment;
+
 public class PaymentProcessor {
     public void processPayment(CardPayment cardPayment) {
         if (cardPayment.isVisa()) {

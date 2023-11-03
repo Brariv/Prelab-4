@@ -1,3 +1,5 @@
+package Model;
+
 import java.io.*;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
@@ -51,6 +53,14 @@ public class FilesManager {
     }
 
     public static void createCSVfile(){
+
+    }
+
+    public static void createJSONfile(){
+
+    }
+
+    public static void createXMLfile(){
 
     }
     

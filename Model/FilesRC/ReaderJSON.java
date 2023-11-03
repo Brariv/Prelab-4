@@ -54,8 +54,16 @@ public class ReaderJSON {
 
     }
 
-    
-
+    /* 
+    public String formatMastercardPayment() {
+        // Formatear la información en JSON
+        String jsonData = "{\n";
+        jsonData += "  \"card_number\":\"" + cardNumber + "\",\n";
+        jsonData += "  \"amount\":" + amount + "\n";
+        jsonData += "}\n";
+        return jsonData;
+    }
+    */
     
 
     

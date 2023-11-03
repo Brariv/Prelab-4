@@ -23,3 +23,15 @@ public class creatorXML {
         }
     }
 }
+
+
+/*public String formatVisaPayment() {
+        // Formatear la informacion en XML
+        String xmlData = "<visa_payment>\n";
+        xmlData += "  <card_number>" + cardNumber + "</card_number>\n";
+        xmlData += "  <amount>" + amount + "</amount>\n";
+        xmlData += "  <commission>" + (amount * 0.05) + "</commission>\n";
+        xmlData += "  <ivac_commission>" + ((amount * 0.05) * 0.12) + "</ivac_commission>\n";
+        xmlData += "</visa_payment>\n";
+        return xmlData;
+    } */

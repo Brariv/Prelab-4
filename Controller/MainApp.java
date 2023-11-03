@@ -1,32 +1,27 @@
 package Controller;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
-import Model.CardPayment;
-import Model.FilesRC.ReaderJSON;
+
 import View.PaymentProcessor;
 
 public class MainApp {
     public static void main(String[] args) {
-        
+        PaymentProcessor paymentProcessor = new PaymentProcessor();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese el path del archivo JSON: ");
         String path = scanner.nextLine();
+        paymentProcessor.AssignBrandCard(path);
 
-
-        System.out.print("Número de tarjeta: ");
-        String cardNumber = scanner.nextLine();
-        System.out.print("Monto: ");
-        double amount = scanner.nextDouble();
-        System.out.print("Cuotas (opcional): ");
-        int installments = scanner.nextInt();
-
-        CardPayment cardPayment = new CardPayment(cardNumber, amount, installments);
-        PaymentProcessor paymentProcessor = new PaymentProcessor();
-
-        paymentProcessor.processPayment(cardPayment);
+        if (paymentProcessor.anyErrors()) {
+            System.out.println("Se encontraron errores en los siguientes registros: ");
+            System.out.println(paymentProcessor.getErrors());
+        } else {
+            System.out.println("Archivo procesado correctamente.");
+        }
+        
 
         scanner.close();
     }

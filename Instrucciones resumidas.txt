@@ -1,0 +1,35 @@
+Que tiene que poder hacer y que tiene que tener para funcionar:
+
+
+Es un programa donde se tiene que hacer una tienda en linea , procesamiento de pagos y conexion a diferentes pasarelas de pago. 
+
+Por otro lado ,para poder procesar el pago , se tiene que agregar una tarjeta , eso quiere decir que le tiene que pdir al usuario lo siguiente: 
+
+Usuario 
+ID
+Public_key
+Monto 
+Cuotas(esto pude ser opcional)
+Numero de tarjeta(In 16 digitos)
+Fecha de vencimiento (Int de 4 digitos) 
+Código CVV(Int 3 digitos)
+
+- Si el primer numero de la tarjeta es 4 , se sabe que es una tarjeta VISA:
+
+    o Se formateará el archivo a un formato xml, además que al monto se le recargará un
+5% por cobro de comisión de servicio, y a ese 5% se le extraerá un 12% que es el
+IVA de comisión.
+
+- Si el primer dígito de la tarjeta es un 5 entonces es una tarjeta Mastercard:
+
+    o Se formateará el archivo en un formato json, el cual tendrá todos los valores en
+dólares y el número de tarjeta se encriptará con el algoritmo de cifrado del
+emperador, luego a todo el contenido del archivo se le extraerá el código hash MD5
+y se guardará en el nombre del archivo para su posterior análisis.
+
+- Si el primer dígito de la tarjeta es un 3, entonces es American Express:
+
+    o Se formateará el archivo en formato csv, en el cual el último campo tendrá que ser
+el código hash MD5, la información del monto se le calculará el 7% del servicio, que
+se le tendrá que agregar al monto, y si el pago es en cuotas, este valor incrementará
+al 15%.

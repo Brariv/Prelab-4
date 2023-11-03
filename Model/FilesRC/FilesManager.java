@@ -1,24 +1,19 @@
-package Model;
+package Model.FilesRC;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import com.google.gson.Gson;
-import com.thoughtworks.xstream.XStream;
+
 
 
 
 
 public class FilesManager {
-
-
-    
 
 
     public static ArrayList<ArrayList<String>> readFilesJSON(String path){ //This class will read Json Files
@@ -62,47 +57,11 @@ public class FilesManager {
 
     }
 
-    public static void CreateFilesCSV(int N, ArrayList<String> newT) {
-        String path = "AmericanExpress"+N+".csv";    
-        try (FileWriter writer = new FileWriter(path)){
-            for (String word : newT) {
-                writer.write(word);
-                writer.write(",");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    
 
-    public static void CreateFilesJSON(int N,ArrayList<String> newT){
-        Gson gson = new Gson();
-        String json = gson.toJson(newT);
-        String path = "MasterCard"+N+".json";
+    
 
-        try {
-            FileWriter fileWriter = new FileWriter(path);
-            fileWriter.write(json);
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void CreateFilesXML(int N,ArrayList<String> newT){
-        XStream xstream = new XStream();
-        xstream.alias("newT", ArrayList.class);
-        String xml = xstream.toXML(newT);
-        String path = "Visa"+N+".xml";
-        try {
-            FileWriter fileWriter = new FileWriter(path);
-            fileWriter.write(xml);
-            fileWriter.close();
-        
-            System.out.println("ArrayList was saved to XML file successfully!");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    
     
 
 

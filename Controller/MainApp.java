@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Model.CardPayment;
-import Model.FilesManager;
+import Model.FilesRC.FilesManager;
 import View.PaymentProcessor;
 
 public class MainApp {

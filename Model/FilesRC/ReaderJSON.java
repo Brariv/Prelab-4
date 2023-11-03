@@ -10,10 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-
-
-
-public class FilesManager {
+public class ReaderJSON {
 
 
     public static ArrayList<ArrayList<String>> readFilesJSON(String path){ //This class will read Json Files

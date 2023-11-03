@@ -1,11 +1,11 @@
 {
-    "usuario": [],
-    "id":[],
-    "public_key": [],
-    "monto":[],
-    "cuotas":[],
-    "numero_tarjeta":[],
-    "fecha_vencimiento":[],
-    "cvv":[]
+    "usuario": ["Carlos"],
+    "id":[134],
+    "public_key": ["si"],
+    "monto":[100],
+    "cuotas":[1],
+    "numero_tarjeta":[1234123412341234],
+    "fecha_vencimiento":["12/23"],
+    "cvv":[232]
 }
 

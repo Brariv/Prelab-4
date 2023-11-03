@@ -36,13 +36,25 @@ public class FilesManager {
             JSONParser jsonParser = new JSONParser();
             Object obj = jsonParser.parse(new FileReader(path));
             JSONObject jsonObject = (JSONObject) obj;
-            JSONArray jsonHoras = (JSONArray) jsonObject.get("Horas");
-            JSONArray jsonDia = (JSONArray) jsonObject.get("Dia");
-            JSONArray jsonPriori = (JSONArray) jsonObject.get("Prioridad");
-            for (int i = 0; i < jsonHoras.size(); i++) {
-                arrayList.add(jsonHoras.get(i).toString());
-                arrayList.add(jsonDia.get(i).toString());
-                arrayList.add(jsonPriori.get(i).toString());
+            JSONArray jsonuser = (JSONArray) jsonObject.get("usuario");
+            JSONArray jsonid = (JSONArray) jsonObject.get("id");
+            JSONArray jsonpk = (JSONArray) jsonObject.get("public_key");
+            JSONArray jsonmonto = (JSONArray) jsonObject.get("monto");
+            JSONArray jsoncuotas = (JSONArray) jsonObject.get("cuotas");
+            JSONArray jsonnt = (JSONArray) jsonObject.get("numero_tarjeta");
+            JSONArray jsonfv = (JSONArray) jsonObject.get("fecha_vencimiento");
+            JSONArray jsoncvv = (JSONArray) jsonObject.get("cvv");
+
+
+            for (int i = 0; i < jsonuser.size(); i++) {
+                arrayList.add(jsonuser.get(i).toString());
+                arrayList.add(jsonid.get(i).toString());
+                arrayList.add(jsonpk.get(i).toString());
+                arrayList.add(jsonmonto.get(i).toString());
+                arrayList.add(jsoncuotas.get(i).toString());
+                arrayList.add(jsonnt.get(i).toString());
+                arrayList.add(jsonfv.get(i).toString());
+                arrayList.add(jsoncvv.get(i).toString());
                 newT.add(arrayList);
                 arrayList = new ArrayList<>();
             }

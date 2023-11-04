@@ -13,7 +13,7 @@ import org.json.simple.parser.ParseException;
 public class ReaderJSON {
 
 
-    public static ArrayList<ArrayList<String>> readFilesJSON(String path){ //This class will read Json Files
+    public ArrayList<ArrayList<String>> readFilesJSON(String path){ //This class will read Json Files
         ArrayList<ArrayList<String>> newT = new ArrayList<ArrayList<String>>();
 
         ArrayList<String> arrayList = new ArrayList<>();
@@ -54,16 +54,7 @@ public class ReaderJSON {
 
     }
 
-    /* 
-    public String formatMastercardPayment() {
-        // Formatear la información en JSON
-        String jsonData = "{\n";
-        jsonData += "  \"card_number\":\"" + cardNumber + "\",\n";
-        jsonData += "  \"amount\":" + amount + "\n";
-        jsonData += "}\n";
-        return jsonData;
-    }
-    */
+    
     
 
     

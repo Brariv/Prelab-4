@@ -2,7 +2,7 @@ package Model.Coders;
 
 public class emperadorcoder {
     
-    public String encodeEmperadorString(String Mensaje) {
+    public static String encodeEmperadorString(String Mensaje) {
         String ResultadoEnc = "";
         for (int i = 0; i < Mensaje.length(); i++){
             char a = Mensaje.charAt(i); 

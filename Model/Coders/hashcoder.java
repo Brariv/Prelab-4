@@ -1,6 +1,6 @@
 package Model.Coders;
 
-import java.util.ArrayList;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -21,14 +21,6 @@ public class hashcoder {
             }
         }
 
-        public static ArrayList<String> encodeMD5Array(ArrayList<String> input) {
-            
-            ArrayList<String> listMD5 = new ArrayList<String>();
-            for (String s : input) {
-                listMD5.add(hashcoder.encodeMD5String(s));
-            }
-            return(listMD5);
-        }
 
 
     }

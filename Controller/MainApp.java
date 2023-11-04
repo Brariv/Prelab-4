@@ -12,7 +12,7 @@ public class MainApp {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese el path del archivo JSON: ");
-        String path = scanner.nextLine();
+        String path = scanner.nextLine().replaceAll("\"", "");
         paymentProcessor.AssignBrandCard(path);
 
         if (paymentProcessor.anyErrors()) {

@@ -4,34 +4,36 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.thoughtworks.xstream.XStream;
+
 
 public class creatorXML {
     public static void CreateFilesXML(int N,ArrayList<String> newT){
-        XStream xstream = new XStream();
-        xstream.alias("newT", ArrayList.class);
-        String xml = xstream.toXML(newT);
+
         String path = "Visa"+N+".xml";
         try {
             FileWriter fileWriter = new FileWriter(path);
-            fileWriter.write(xml);
+            fileWriter.write(formatVisaPayment(newT));
             fileWriter.close();
-        
-            System.out.println("ArrayList was saved to XML file successfully!");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-}
 
 
-/*public String formatVisaPayment() {
+
+    private static String formatVisaPayment(ArrayList<String> newT) {
         // Formatear la informacion en XML
         String xmlData = "<visa_payment>\n";
-        xmlData += "  <card_number>" + cardNumber + "</card_number>\n";
-        xmlData += "  <amount>" + amount + "</amount>\n";
-        xmlData += "  <commission>" + (amount * 0.05) + "</commission>\n";
-        xmlData += "  <ivac_commission>" + ((amount * 0.05) * 0.12) + "</ivac_commission>\n";
+        xmlData += "  <user>" + newT.get(0) + "</user>\n";
+        xmlData += "  <id>" + newT.get(1) + "</id>\n";
+        xmlData += "  <public_key>" + newT.get(2) + "</public_key>\n";
+        xmlData += "  <amount>" + newT.get(3) + "</amount>\n";
+        xmlData += "  <payments>" + newT.get(4) + "</payments>\n";
+        xmlData += "  <card_number>" + newT.get(5) + "</card_number>\n";
+        xmlData += "  <expiration_date>" + newT.get(6) + "</expiration_date>\n";
+        xmlData += "  <cvv>" + newT.get(7) + "</cvv>\n";
         xmlData += "</visa_payment>\n";
         return xmlData;
-    } */
+    } 
+
+}
